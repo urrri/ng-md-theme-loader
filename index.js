@@ -1,7 +1,7 @@
 var loaderUtils = require('loader-utils');
 
 module.exports = function(content) {
-  console.log(content);
+  // console.log(content);
   this.cacheable && this.cacheable();
 
   var options = loaderUtils.getOptions(this) || {};

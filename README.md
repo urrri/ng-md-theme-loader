@@ -20,9 +20,12 @@ ng-md-theme-loader creates a JS module that registers MD CSS template with [$mdT
 
 ``` javascript
 require('!ng-md-theme-loader!file.theme.css');
-// => generates the javascript:
-// angular.module('ngMaterial').run(['$mdThemingProvider', function(c) { c.registerStyles('content of the ?.theme.css file') }]);
 ```
+generates the javascript:
+``` javascript
+angular.module('ngMaterial').run(['$mdThemingProvider', function(c) { c.registerStyles('content of the ?.theme.css file') }]);
+```
+
 
 
 ### `module`
@@ -32,8 +35,10 @@ You can override this by setting the `module` parameter, e.g.
 
 ``` javascript
 require('!ng-md-theme-loader?module=myApp!file.theme.css');
-// => generates the javascript:
-// angular.module('myApp').run(['$mdThemingProvider', function(c) { c.registerStyles('content of the ?.theme.css file') }]);
+```
+ generates the javascript:
+``` javascript
+angular.module('myApp').run(['$mdThemingProvider', function(c) { c.registerStyles('content of the ?.theme.css file') }]);
 ```
 
 NOTE: specified module should be preliminary defined in your application
@@ -49,10 +54,12 @@ This module relies on angular being available on `window` object. However, in ca
 
 ```javascript
 require('!ng-md-theme-loader?requireAngular!file.theme.css');
+```
 
-// => generates the javascript:
-// var angular = require('angular');
-// angular.module('ngMaterial').run(['$mdThemingProvider', function(c) { c.registerStyles('content of the ?.theme.css file') }]);
+generates the javascript:
+``` javascript
+var angular = require('angular');
+angular.module('ngMaterial').run(['$mdThemingProvider', function(c) { c.registerStyles('content of the ?.theme.css file') }]);
 ```
 
 ## Webpack Config
@@ -68,7 +75,7 @@ module.exports = {
         loader: 'ng-md-theme'
       },
       {
-        test: /\.theme\.sass$/,
+        test: /\.theme\.scss$/,
         loader: 'ng-md-theme!sass'
       }
       // other loaders...
@@ -89,7 +96,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.theme\.sass$/,
+        test: /\.theme\.scss$/,
         use: [
           { loader: 'ng-md-theme-loader'},
           { loader: 'sass-loader' }

@@ -18,11 +18,11 @@ npm install ng-md-theme-loader --save-dev
 
 ng-md-theme-loader creates a JS module that registers MD CSS template with [$mdThemingProvider](https://material.angularjs.org/1.1.4/#custom-theme-styles)  e.g.
 
-``` javascript
+```javascript
 require('!ng-md-theme-loader!file.theme.css');
 ```
 generates the javascript:
-``` javascript
+```javascript
 angular.module('ngMaterial').run(['$mdThemingProvider', function(c) { c.registerStyles('content of the ?.theme.css file') }]);
 ```
 
@@ -33,11 +33,11 @@ angular.module('ngMaterial').run(['$mdThemingProvider', function(c) { c.register
 By default ng-md-theme-loader adds a run method to the global 'ngMaterial' module which should be explicitly required by your app for using Angular Material.
 You can override this by setting the `module` parameter, e.g.
 
-``` javascript
+```javascript
 require('!ng-md-theme-loader?module=myApp!file.theme.css');
 ```
  generates the javascript:
-``` javascript
+```javascript
 angular.module('myApp').run(['$mdThemingProvider', function(c) { c.registerStyles('content of the ?.theme.css file') }]);
 ```
 
@@ -57,7 +57,7 @@ require('!ng-md-theme-loader?requireAngular!file.theme.css');
 ```
 
 generates the javascript:
-``` javascript
+```javascript
 var angular = require('angular');
 angular.module('ngMaterial').run(['$mdThemingProvider', function(c) { c.registerStyles('content of the ?.theme.css file') }]);
 ```
@@ -66,7 +66,7 @@ angular.module('ngMaterial').run(['$mdThemingProvider', function(c) { c.register
 
 It's recommended to adjust your `webpack.config` so `ng-md-theme-loader` is applied automatically on all files ending with e.g. `.theme.css`. For Webpack 1 this would be something like:
 
-``` javascript
+```javascript
 module.exports = {
   module: {
     loaders: [
@@ -85,7 +85,7 @@ module.exports = {
 ```
 For Webpack 2 this would be something like:
 
-``` javascript
+```javascript
 module.exports = {
   module: {
     rules: [

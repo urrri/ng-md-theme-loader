@@ -1,8 +1,8 @@
-# AngularJS Material Custom Theme loader for [webpack](http://webpack.github.io/)
+# AngularJS Material Theme custom CSS loader for [webpack](http://webpack.github.io/)
 
-Adds your AngularJS Material custom theme css into your webpack Javascript Bundle.
+Adds your AngularJS Material theme custom CSS into your webpack Javascript Bundle.
 
-ng-md-theme-loader does not minify or process your css at all, and instead uses standard loaders such as [sass-loader](https://github.com/webpack-contrib/sass-loader). This gives you enough flexibility to pick and choose your loaders.
+ng-md-theme-loader does not minify or process your CSS at all, and instead uses standard loaders such as [sass-loader](https://github.com/webpack-contrib/sass-loader). This gives you enough flexibility to pick and choose your loaders.
 
 ## Install
 
@@ -16,7 +16,7 @@ npm install ng-md-theme-loader --save-dev
 
 [Documentation: ng-material's theme implementation](https://github.com/angular/material/blob/master/docs/guides/THEMES_IMPL_NOTES.md#the-mini-dsl)
 
-ng-md-theme-loader creates a JS module that registers MD CSS template with [$mdThemingProvider](https://material.angularjs.org/1.1.4/#custom-theme-styles)  e.g.
+ng-md-theme-loader creates a JS module that registers custom CSS template with [$mdThemingProvider](https://material.angularjs.org/1.1.4/#custom-theme-styles)  e.g.
 
 ```javascript
 require('!ng-md-theme-loader!file.theme.css');
@@ -25,7 +25,6 @@ generates the javascript:
 ```javascript
 angular.module('ngMaterial').run(['$mdThemingProvider', function(c) { c.registerStyles('content of the ?.theme.css file') }]);
 ```
-
 
 
 ### `module`
